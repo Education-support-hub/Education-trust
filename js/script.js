@@ -1,6 +1,9 @@
-// Main JavaScript for Education Trust Website
+// Main JavaScript for Education Trust Website - Enhanced with Slider Features
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize carousel
+    initializeCarousel();
+    
     // Initialize tooltips and popovers if using Bootstrap
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -20,7 +23,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Observer for scroll animations
+    observeElements();
 });
+
+// Initialize Carousel with enhanced animations
+function initializeCarousel() {
+    const carousel = document.querySelector('.hero-carousel');
+    
+    if (carousel) {
+        const bsCarousel = new bootstrap.Carousel(carousel, {
+            interval: 5000,
+            wrap: true,
+            keyboard: true,
+            pause: 'hover'
+        });
+        
+        // Add custom transitions
+        carousel.addEventListener('slide.bs.carousel', function(e) {
+            // Add animation classes when sliding
+            const nextSlide = e.relatedTarget;
+            nextSlide.classList.add('active');
+        });
+    }
+}
 
 // Filter books by category
 function filterBooks(category) {
@@ -110,5 +137,51 @@ function observeElements() {
     });
 }
 
-// Initialize on page load
-window.addEventListener('load', observeElements);
+// Smooth scroll effect on page load
+window.addEventListener('load', function() {
+    observeElements();
+    
+    // Fade in page content
+    document.body.style.opacity = '1';
+});
+
+// Add scroll event listener for navbar background
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.backgroundColor = 'rgba(102, 126, 234, 0.95)';
+        navbar.style.backdropFilter = 'blur(10px)';
+    } else {
+        navbar.style.backgroundColor = '';
+        navbar.style.backdropFilter = '';
+    }
+});
+
+// Keyboard navigation for carousel
+document.addEventListener('keydown', function(e) {
+    const carousel = document.querySelector('.hero-carousel');
+    if (carousel) {
+        if (e.key === 'ArrowLeft') {
+            bootstrap.Carousel.getInstance(carousel).prev();
+        } else if (e.key === 'ArrowRight') {
+            bootstrap.Carousel.getInstance(carousel).next();
+        }
+    }
+});
+
+// Performance optimization - Lazy load images
+if ('IntersectionObserver' in window) {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+}
