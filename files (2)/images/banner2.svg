@@ -1,0 +1,86 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Base Background -->
+  <rect width="1200" height="600" fill="url(#grad3)"/>
+  
+  <!-- Overlay -->
+  <rect width="1200" height="600" fill="url(#grad4)"/>
+  
+  <!-- Left Side - Student with Laptop -->
+  <g id="student" transform="translate(150, 150)">
+    <!-- Head -->
+    <circle cx="40" cy="30" r="20" fill="#FDBCB4"/>
+    
+    <!-- Body -->
+    <rect x="20" y="50" width="40" height="50" rx="5" fill="#667eea"/>
+    
+    <!-- Arms -->
+    <rect x="0" y="60" width="20" height="30" rx="5" fill="#FDBCB4"/>
+    <rect x="60" y="60" width="20" height="30" rx="5" fill="#FDBCB4"/>
+    
+    <!-- Laptop -->
+    <g transform="translate(5, 100)">
+      <rect x="0" y="0" width="70" height="40" rx="3" fill="#333333"/>
+      <rect x="2" y="2" width="66" height="25" fill="#87CEEB"/>
+      <rect x="0" y="38" width="70" height="3" fill="#666666"/>
+      <!-- Laptop base -->
+      <rect x="15" y="41" width="40" height="2" fill="#666666"/>
+    </g>
+  </g>
+  
+  <!-- Right Side - Success Trophy -->
+  <g id="trophy" transform="translate(950, 120)">
+    <!-- Cup -->
+    <path d="M 20 20 Q 10 30 10 50 L 10 60 Q 10 70 20 70 L 40 70 Q 50 70 50 60 L 50 50 Q 50 30 40 20 Z" fill="#FFD700"/>
+    
+    <!-- Trophy Handles -->
+    <path d="M 10 40 Q 0 45 0 55" stroke="#FFD700" stroke-width="4" fill="none"/>
+    <path d="M 50 40 Q 60 45 60 55" stroke="#FFD700" stroke-width="4" fill="none"/>
+    
+    <!-- Base -->
+    <rect x="15" y="70" width="30" height="10" fill="#DAA520"/>
+    <rect x="10" y="80" width="40" height="4" fill="#FFD700"/>
+    
+    <!-- Star on Cup -->
+    <g transform="translate(30, 45)">
+      <polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,4 -5,8 -3,2 -8,-2 -2,-2" fill="#FF6B6B"/>
+    </g>
+  </g>
+  
+  <!-- Checkmarks -->
+  <g id="checkmarks">
+    <!-- Checkmark 1 -->
+    <g transform="translate(300, 200)">
+      <circle cx="0" cy="0" r="15" fill="white" opacity="0.3"/>
+      <polyline points="-8,-2 -2,4 8,-6" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    
+    <!-- Checkmark 2 -->
+    <g transform="translate(800, 250)">
+      <circle cx="0" cy="0" r="15" fill="white" opacity="0.3"/>
+      <polyline points="-8,-2 -2,4 8,-6" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  
+  <!-- Floating Circles -->
+  <circle cx="100" cy="100" r="50" fill="white" opacity="0.08"/>
+  <circle cx="1100" cy="450" r="70" fill="white" opacity="0.08"/>
+  <circle cx="600" cy="500" r="100" fill="white" opacity="0.05"/>
+  
+  <!-- Success Stars -->
+  <g id="stars">
+    <polygon points="400,60 405,75 420,75 410,85 415,100 400,90 385,100 390,85 380,75 395,75" fill="white" opacity="0.7"/>
+    <polygon points="850,80 855,95 870,95 860,105 865,120 850,110 835,120 840,105 830,95 845,95" fill="white" opacity="0.7"/>
+  </g>
+</svg>
