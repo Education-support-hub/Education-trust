@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBook Library - Education Trust</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-graduation-cap"></i> Education Trust
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="study-material.html">Study Materials</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ebooks.html">eBooks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="exam-updates.html">Exam Updates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="result-check.html">Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-warning text-dark ms-2" href="donate.html">Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-banner bg-gradient text-white d-flex align-items-center justify-content-center" style="height: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">eBook Library</h1>
+            <p class="lead">Free downloadable eBooks for competitive exam preparation</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-4 bg-light border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h5 class="mb-0 fw-bold">Filter by Category</h5>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group w-100 flex-wrap" role="group">
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="filterBooks('all')">All</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="filterBooks('physics')">Physics</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="filterBooks('math')">Math</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="filterBooks('reasoning')">Reasoning</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="filterBooks('gk')">GK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- eBooks Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4" id="ebooksContainer">
+                <!-- Physics Books -->
+                <div class="col-md-6 col-lg-3 ebook-item" data-category="physics">
+                    <div class="card book-card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-book fa-5x text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Physics Complete Guide</h5>
+                            <p class="card-text text-muted small mb-2">Mechanics, Waves, Thermodynamics</p>
+                            <p class="text-sm text-muted"><i class="fas fa-file-pdf"></i> 150 pages</p>
+                            <p class="fw-bold text-primary mb-3">FREE</p>
+                            <a href="ebooks/physics-complete.pdf" class="btn btn-primary btn-sm w-100">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 ebook-item" data-category="physics">
+                    <div class="card book-card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-book fa-5x text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Electricity & Magnetism</h5>
+                            <p class="card-text text-muted small mb-2">EMI, AC Circuits, EM Waves</p>
+                            <p class="text-sm text-muted"><i class="fas fa-file-pdf"></i> 120 pages</p>
+                            <p class="fw-bold text-primary mb-3">FREE</p>
+                            <a href="ebooks/physics-em.pdf" class="btn btn-primary btn-sm w-100">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mathematics Books -->
+                <div class="col-md-6 col-lg-3 ebook-item" data-category="math">
+                    <div class="card book-card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-book fa-5x text-success"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Mathematics Handbook</h5>
+                            <p class="card-text text-muted small mb-2">Formulas & Quick Reference</p>
+                            <p class="text-sm text-muted"><i class="fas fa-file-pdf"></i> 200 pages</p>
+                            <p class="fw-bold text-success mb-3">FREE</p>
+                            <a href="ebooks/math-handbook.pdf" class="btn btn-success btn-sm w-100">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 ebook-item" data-category="math">
+                    <div class="card book-card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-book fa-5x text-success"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Algebra & Trigonometry</h5>
+                            <p class="card-text text-muted small mb-2">500+ Solved Problems</p>
+                            <p class="text-sm text-muted"><i class="fas fa-file-pdf"></i> 180 pages</p>
+                            <p class="fw-bold text-success mb-3">FREE</p>
+                            <a href="ebooks/math-algebra.pdf" class="btn btn-success btn-sm w-100">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reasoning Books -->
+                <div class="col-md-6 col-lg-3 ebook-item" data-category="reasoning">
+                    <div class="card book-card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-book fa-5x text-warning"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Reasoning Master</h5>
+                            <p class="card-text text-muted small mb-2">Logical & Analytical</p>
+                            <p class="text-sm text-muted"><i class="fas fa-file-pdf"></i> 160 pages</p>
+                            <p class="fw-bold text-warning mb-3">FREE</p>
+                            <a href="ebooks/reasoning-master.pdf" class="btn btn-warning btn-sm w-100">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 ebook-item" data-category="reasoning">
+                    <div class="card book-card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-book fa-5x text-warning"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Puzzles & Games</h5>
+                            <p class="card-text text-muted small mb-2">Brain Teasers Collection</p>
+                            <p class="text-sm text-muted"><i class="fas fa-file-pdf"></i> 140 pages</p>
+                            <p class="fw-bold text-warning mb-3">FREE</p>
+                            <a href="ebooks/reasoning-puzzles.pdf" class="btn btn-warning btn-sm w-100">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GK Books -->
+                <div class="col-md-6 col-lg-3 ebook-item" data-category="gk">
+                    <div class="card book-card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-book fa-5x text-danger"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">GK Encyclopedia</h5>
+                            <p class="card-text text-muted small mb-2">1000+ Facts</p>
+                            <p class="text-sm text-muted"><i class="fas fa-file-pdf"></i> 250 pages</p>
+                            <p class="fw-bold text-danger mb-3">FREE</p>
+                            <a href="ebooks/gk-encyclopedia.pdf" class="btn btn-danger btn-sm w-100">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 ebook-item" data-category="gk">
+                    <div class="card book-card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-book fa-5x text-danger"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Current Affairs 2024</h5>
+                            <p class="card-text text-muted small mb-2">Updated Monthly</p>
+                            <p class="text-sm text-muted"><i class="fas fa-file-pdf"></i> 100 pages</p>
+                            <p class="fw-bold text-danger mb-3">FREE</p>
+                            <a href="ebooks/affairs-2024.pdf" class="btn btn-danger btn-sm w-100">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Education Trust</h5>
+                    <p class="text-muted">Empowering students with free quality education.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="study-material.html" class="text-muted text-decoration-none">Study Materials</a></li>
+                        <li><a href="quiz.html" class="text-muted text-decoration-none">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <p class="text-muted"><i class="fas fa-envelope"></i> info@educationtrust.com</p>
+                    <p class="text-muted"><i class="fas fa-phone"></i> +91 98765 43210</p>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center text-muted">
+                <p>&copy; 2024 Education Trust. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
